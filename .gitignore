@@ -2,3 +2,17 @@
 *.exe
 *.vscode
 .vscode
+.sh
+*.sh
+.o
+*.o
+.elf
+*.elf
+.lib
+*.lib
+.deb
+*.deb
+.bin
+*.bin
+.
+*.
