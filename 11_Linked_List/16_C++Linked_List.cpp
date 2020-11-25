@@ -114,7 +114,7 @@ int LinkedList::Delete(int index)
     {
         return x;
     }
-    if (index == 1)
+    if (index == 0)
     {
         p = first;
         first = first->next;
@@ -124,7 +124,7 @@ int LinkedList::Delete(int index)
     else
     {
         p = first;
-        for (int i = 0; i <= index; i++)
+        for (int i = 0; i <= index-1; i++)
         {
             q = p;
             p = p->next;
@@ -142,6 +142,11 @@ int main()
     LinkedList l(a,5);
 
     l.Display();
+    l.Insert(3,90);
+    l.Display();
+    cout<<"The deleted element is "<< l.Delete(3)<<endl;
+    l.Display();
+
 
     cout << endl;
     return 0;
