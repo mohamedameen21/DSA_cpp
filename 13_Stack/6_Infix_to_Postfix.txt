@@ -1,0 +1,45 @@
+1) a+b*c
+To prefix:
+    1.(a+(b*c))
+    2.(a+[*bc])
+    3.+a*bc
+To postfix:
+    1.(a+(b*c))
+    2.(a+[bc*])
+    3.abc*+
+
+2)a+b+c*d
+To postfix:
+    1. a+b+cd*
+    2. ab+cd*+
+    3. abcd*++
+
+To prefix:
+    1. a+b+*cd
+    2. +ab+*cd
+    3. ++ab*cd
+
+    1. +-       1   l-R
+    2. */       2   L-R
+    3. ^power   3   R-l
+    4. unary    4   R-l
+    5. brackets 5   L-R
+
+
+With Associativity
+    -a + b * log n!
+To postfix:
+    1.-a + b * log n!
+    2.-a + b * n!log
+    3.-a + b n!log *
+    4. a- + b n!log
+    5. a- b n!log +
+
+To prefix:
+    1. -a + b * log !n
+    2. -a + b * log !n
+    3. -a + * b log !n
+    4. -a + * b log !n
+    5. + -a * b log !n 
+    
+
