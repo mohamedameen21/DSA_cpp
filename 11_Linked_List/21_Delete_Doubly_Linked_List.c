@@ -137,7 +137,7 @@ int main()
 {
     int a[] = {1, 2, 3, 4, 5};
     create(a, 5);
-    printf("The Deleted element is %d \n",delete(first,20));
+    printf("The Deleted element is %d \n",delete(first,3));
     display(first);
     return 0;
 }
