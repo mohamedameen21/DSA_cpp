@@ -1,0 +1,229 @@
+Terminology of trees
+
+    Tree is a collection of nodes and if there are n nodes or vertices then there will be 
+    n-1 edges . 
+
+    Root - No parent First node in the tree 
+    parent - parent to the direct node of the child (below)
+    child - direct node of the parent node (above)
+    siblings - chilren of same parent
+    decentdents - all nodes which are under that node or can be rechable from that node
+    ancestors - all the node through which we able to reach root node is called 
+    Degree of node - no. of direct chilren
+    Degree of Tree - maximum Degree of any node is the Degree of tree
+    Internal /Non Leaf node / Non Terminal - Node with Degree greater than zero
+    External /Leaf Node / Terminal - Nodes with degree zero
+    Level - level starts from 1 onwards (actually we count the no. of nodes to reach next level )
+    Height - Height starts form 0 (here we count the edges (that line connecting two nodes))
+    Forest - collection of trees 
+
+Binary Tree
+    The degree of the tree should be 0,1,2 min - 0 and max - 2
+    {0,1,2}
+    called left child or right child
+*******************************************************************************************************************
+
+Number of Binary Tree
+    1) Unlabled Nodes 
+    2) labled Nodes
+
+Unlabled Nodes:
+
+    If there are 3 nodes we can generate 5 different shapes of Binary Tree T(3) = 5
+    if 4 nodes then 14 shapes of Binary tree T(4) = 14
+
+    Formula for finding No. of trees for given nodes
+
+    T(n) = 2nCn / n+1 This formula is called catalon Number formula because it is used to find catalon Number (Combination Formula)
+        
+        ex for n = 5;
+            2(5) C5 / 5 +1;
+            10C5 / 6;
+            10*9*8*7*6 / 1*2*3*4*5 / 6;
+            = 42;
+        T(5) = 42;
+
+    Formula to find the Trees with maximum Height is 2pow(n-1); 
+
+    There is also another method to find the catalon Number I think this is enough that formula is difficult (Recursive formula)
+**********************************************************************************************************************
+
+Labled Nodes:
+    Assume that lables are A,B,C 
+    if there is 3 nodes then we have 5 trees for Unlabled nodes
+    if each tree is labled the possibilites is 3 factorial 
+    Hence the formula of a catalon Number to labled node = t(n) = 2nCn / n+1 *n!
+************************************************************************************************************************
+
+
+Height vs Nodes:
+    
+    If Height are given then to find the minimum and maximum no. of nodes
+    
+    min node  = Height+1;
+    
+    max node = This in gp series
+    for given Height 3 = 1 + 2 + 2pow(2) + 2pow(3) = 15;
+    GP series formula -> a+ar + arpow(2) + arpow(3) +arpow(k) = a(r pow(k+1) - 1) / r-1
+    then -> max node =  1 + 2 + 2pow(2) + 2pow(3) + 2pow(h) 
+    here a = 1; and r = 2; -> 1.(2 pow(h+1) - 1) / 2 -1;
+    
+
+    minimum  node  = Height+1;
+    maximum node  = 2pow(h+1) - 1;
+*************************************************************************************************
+
+    If no. of nodes  are given then to find the minimum and maximum no. of Height
+
+    maximum Height = n-1;
+    minimum Height = convert the above maximum node formula to Height
+
+    n =  2pow(h+1) - 1
+    n +1 = 2pow(h+1)
+    2pow(h+1) = n+1
+    h+1 = log base2 (n+1)
+    h = log [base2 (n+1)] - 1
+
+
+    minimum Height = log [base2 (n+1) -1];
+    maximum Height = n-1;
+**********************************************************************************************************
+
+Relationship between Internal Nodes and External Nodes:
+    Formula:
+        no. of nodes with deg(0) = no. of nodes with deg(2) + 1; 
+        //This formula is always true in Binary Tree
+
+***********************************************************************************************************
+
+Strict Binary Tree:
+    In strict Binary tree the tree should have 0 children or 2 children
+    {0,2}; 
+
+***************************************************************************************************************************
+Strict Binary Tree:
+
+Height  vs Nodes
+
+    If Height are given then to find the minimum and maximum no. of nodes
+
+    minimum Nodes = 2 * Height + 1;
+    maximum Nodes = 2pow(h+1) - 1; This is same as the normal Binary tree
+
+    If no. of nodes  are given then to find the minimum and maximum no. of Height
+
+    minimum Height =  log[base2 (n+1)] -1;
+    maximum Height = n-1 / 2;
+
+*******************************************************************************************************************
+
+Strict Binary Tree:
+
+Internal Nodes vs External Nodes
+
+    Formula :
+        no. of External Nodes = no. of Internal Nodes + 1;
+        this formula is always equal in Strict Binary trees
+
+*******************************************************************************************************************
+
+n-arry Trees
+    n is the degree of a tree;
+    ex : 
+        if it is 3 -arry tree
+        then the degree of node shoul be {0,1,2,3};
+    Watch the video ................
+
+    The degree of the tree is not based on the degree of the node but with the capacity of the  node
+
+*******************************************************************************************************************
+
+Strict n -arr tree
+     Here the ever node can have 0 or exactly 3 children;
+     {0,3};
+
+******************************************************************************************************************
+
+Strict n -arr tree:
+ 
+Height vs Node 
+
+    If Height are given then to find the minimum and maximum no. of nodes
+
+    minimum Nodes =  n * h + 1;
+    maximum Nodes =  1 + m + mpow(2) + mpow(3) mpow(h) //In gp series
+
+    gp series formula = a(r pow(k+1) - 1) / r -1
+    a =1 and r = m; -> 1.(m pow(h+1) - 1) / m -1;
+                = mpow(h+1) - 1 ./ m - 1
+
+    minimum Nodes = n * h + 1;
+    maximum Nodes = mpow(h+1) -1/ m - 1
+
+
+    If no. of nodes  are given then to find the minimum and maximum no. of Height
+
+    maximum Height = node - 1 / m;
+    minimum Height = convert , 
+        n(m - 1) = mpow(h+1) - 1
+        n(m - 1) + 1 = mpow(h+1)
+        log [basem node (m - 1 ) + 1] = h+1;
+        log [basem node (m - 1 ) + 1] - 1 = h;
+        h = log [basem node (m - 1 ) + 1] - 1;
+
+    minimum Height = log [basem node (m - 1) +1] - 1;
+    maximum Height = n -1 / m;
+
+***************************************************************************************************************************
+
+Strict n -arr tree:
+
+Internal Node vs External Nodes 
+
+    Formula :
+        No. of External Nodes = (m-1) * no. of Internal Nodes + 1;
+        this condtion is always same in Strict n - arr trees 
+
+*************************************************************************************************************
+
+Representation of Binary Trees:
+    1)Array
+    2)Linked 
+
+Array index starts from one onwards
+     Root Left_child Right_child
+
+If any element or parent is at index i 
+    then its Left_child = 2i;
+    then its Right_child = 2i+1;
+    to know the parent = i/2;
+
+Linked Implementation:
+    struct Node {
+    Left_child;
+    data;
+    Right_child;
+    }
+
+It is simple just inseting the nodes in left or right
+    For any shaped Binary Tree represented using Linked 
+        The no. of null pointer = no. of nodes + 1;
+
+*******************************************************************************************************************************************
+
+Full vs Comple Binary Tree
+    Full:
+        Tree having maximum no. of nodes for its Height
+    Complet:
+        There is no blank spaces  inbetween the Tree when it is represented using Array
+        There is full Binary tree of Height - 1 in any Compete Binary tree;
+
+A Full Binary tree is always complete Binary tree but a complete Binary tree is not always 
+                                                                                    Full Binary tree
+
+*********************************************************************************************************
+
+Strict vs complete: anothe name (complete vs almost complete)
+     
+********************************************************************************************************
+

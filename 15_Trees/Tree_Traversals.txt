@@ -1,0 +1,5 @@
+Types of Traversal in Trees:
+    1) Preorder:   visit(node or root),Preorder(left child),Postorder(right child)
+    2) Inorder:    Inorder(left child),visit(node or root),Inorder(right child)
+    3) Postorder:  Postorder(left child),Postorder(right child),visit(node or root)
+
