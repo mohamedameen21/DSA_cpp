@@ -311,20 +311,26 @@ int main()
     // Insert(8);
     // Insert(30);
 
-    RInsert(root, 50);
-    RInsert(root, 45);
-    RInsert(root, 8);
-    RInsert(root, 74);
-    RInsert(root, 90);
-    RInsert(root, 1);
-    RInsert(root, 60);
-    RInsert(root, 48);
-    RInsert(root, 46);
-    RInsert(root, 55);
-    RInsert(root, 58);
-    RInsert(root, 95);
-    RInsert(root, 93);
-    RInsert(root, 100);
+    // RInsert(root, 50);
+    // RInsert(root, 45);
+    // RInsert(root, 8);
+    // RInsert(root, 74);
+    // RInsert(root, 90);
+    // RInsert(root, 1);
+    // RInsert(root, 60);
+    // RInsert(root, 48);
+    // RInsert(root, 46);
+    // RInsert(root, 55);
+    // RInsert(root, 58);
+    // RInsert(root, 95);
+    // RInsert(root, 93);
+    // RInsert(root, 100);
+
+    RInsert(root,50);
+    RInsert(root,10);
+    RInsert(root,40);
+    RInsert(root,20);
+    RInsert(root,30);
 
     Inorder(root);
     printf("\n");
@@ -339,7 +345,7 @@ int main()
         printf("Element is not Found\n");
     }
 
-    printf("The deleted element is %d \n", Delete(74));
+    printf("The deleted element is %d \n", Delete(30));
     Inorder(root);
 
     printf("\nHeight of the tree is %d\n", height(root));
